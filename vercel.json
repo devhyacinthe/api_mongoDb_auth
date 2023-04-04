@@ -1,7 +1,7 @@
 {
     "version": 2,
     "name" : "apiMongoDB",
-    "build": [
+    "builds": [
         {
             "src": "./server.js",
             "use": "@vercel/node"
