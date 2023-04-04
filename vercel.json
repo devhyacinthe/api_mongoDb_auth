@@ -1,6 +1,5 @@
 {
     "version": 2,
-    "name" : "apiMongoDB",
     "builds": [
         {
             "src": "./server.js",
@@ -10,7 +9,7 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/controllers"
+            "dest": "/"
         }
     ]
 }
