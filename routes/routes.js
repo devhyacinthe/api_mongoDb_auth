@@ -11,13 +11,6 @@ router.post('/signin', signin)
 router.use(passport.authenticate('jwt', {session: false}))
 router.get('/main', main)
 
-/**
- * 
- * @param {express.Request} req 
- * @param {express.Response} res 
- */
-router.get('/', (req, res) => {
-    res.send('hello')
-})
+
 
 module.exports = router
