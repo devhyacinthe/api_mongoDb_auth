@@ -4,8 +4,8 @@ const router = Router()
 
 const passport = require('passport')
 
-router.post('/signup', signup)
-router.post('/signin', signin)
+router.post('/api/signup', signup)
+router.post('/api/signin', signin)
 
 router.use(passport.authenticate('jwt', {session: false}))
 router.get('/main', main)
