@@ -1,12 +1,9 @@
 const {connect} = require('mongoose')
-
+require('dotenv').config()
 
 function dbConnect() {
-    connect("mongodb+srv://devhyacinthe:dhjunior2002@cluster0.uwvdk.mongodb.net/test", {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    })
-        .then(() => console.log("Connexion à la base de donnée 👍"))
+    connect(process.env.MONGO_URI)
+        .then(() => console.log(`Connexion à la base de donnée 👍 `))
         .catch(error => console.log(error))
 }
 
