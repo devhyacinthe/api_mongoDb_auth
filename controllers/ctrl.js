@@ -24,7 +24,7 @@ exports.signup = (req, res) => {
         .save()
         .then((user) => {
             console.log(user);
-            res.status(201).json({message: "User Created !"})
+            res.status(201).json({code: 0, message: "User Created !"})
         })
         .catch((error) => res.status(500).json({message: "User already exist", ...error}))
     }
@@ -53,6 +53,7 @@ exports.signin = (req, res) => {
         .then(match => {
             if(!match) return res.status(500).json({message: "Server Error"})
             res.status(200).json({
+                code: 0,
                 id: user._id,
                 email: user.email,
                 token: jwt.sign({id: user._id}, "SECRET_KEY", {expiresIn: "12h"})
